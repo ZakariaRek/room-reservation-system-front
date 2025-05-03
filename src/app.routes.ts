@@ -27,7 +27,10 @@ export const appRoutes: Routes = [
         component: AppLayout,
         canActivate: [AuthGuard],
         data: { roles: ['ROLE_ADMIN'] },
-        loadChildren: () => import('./app/pages/pages.routes')
+        children: [
+            { path: 'users', loadChildren: () => import('./app/pages/admin/admin.routes') },
+            { path: '', redirectTo: 'users', pathMatch: 'full' }
+        ]
     },
     { path: '**', redirectTo: '/notfound' }
 ];
