@@ -12,6 +12,17 @@ export interface User {
   accessToken: string;
 }
 
+export interface SignupRequest {
+  username: string;
+  email: string;
+  password: string;
+  role?: string[];
+}
+
+export interface MessageResponse {
+  message: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,8 +32,6 @@ export class AuthService {
   private apiUrl = 'http://localhost:8083/api/auth';
 
   constructor(private http: HttpClient, private router: Router) {
-  console.log("aaaaaaaaaaaaaaaaaaaaa");
-
     const storedUser = localStorage.getItem('currentUser');
     this.currentUserSubject = new BehaviorSubject<User | null>(storedUser ? JSON.parse(storedUser) : null);
     this.currentUser = this.currentUserSubject.asObservable();
@@ -43,6 +52,10 @@ export class AuthService {
         this.currentUserSubject.next(user);
       })
     );
+  }
+
+  register(signupRequest: SignupRequest): Observable<MessageResponse> {
+    return this.http.post<MessageResponse>(`${this.apiUrl}/signup`, signupRequest);
   }
 
   logout(): void {
