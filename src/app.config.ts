@@ -7,8 +7,10 @@ import { providePrimeNG } from 'primeng/config';
 import { appRoutes } from './app.routes';
 import { AuthInterceptor } from './app/interceptors/auth.interceptor';
 import { AuthService } from './app/services/auth.service';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 export const appConfig: ApplicationConfig = {
+    
     providers: [
 
         provideRouter(appRoutes, 
@@ -32,5 +34,9 @@ export const appConfig: ApplicationConfig = {
                 options: { darkModeSelector: '.app-dark' } 
             } 
         })
-    ]
+    ],
+    // imports: [
+    //     FullCalendarModule // Add this
+    // ]
+
 };

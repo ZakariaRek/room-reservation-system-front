@@ -24,10 +24,25 @@ export class AppMenu {
                 label: 'Home',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
                 { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
+                { 
+                    label: 'Event Calendar', 
+                    icon: 'pi pi-calendar', 
+                    routerLink: ['/calendar'] 
+                },
                 {
                     label: 'Administration',
                     items: [
                         { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users'] }
+                    ]
+                },
+                {
+                    label: 'Calendar',
+                    items: [
+                        { 
+                            label: 'Event Calendar', 
+                            icon: 'pi pi-calendar', 
+                            routerLink: ['/calendar'] 
+                        }
                     ]
                 },
             ],
