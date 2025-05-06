@@ -5,8 +5,15 @@ import { Documentation } from './app/pages/documentation/documentation';
 import { Landing } from './app/pages/landing/landing';
 import { Notfound } from './app/pages/notfound/notfound';
 import { AuthGuard } from './app/guards/auth.guard';
+import { AdminGuard } from './app/guards/admin.guard';
 
 export const appRoutes: Routes = [
+    {
+        path: 'admin',
+        loadChildren: () => import('./app/pages/admin/admin.routes'),
+        canActivate: [AdminGuard],
+        data: { roles: ['ROLE_ADMIN'] }
+      },
     {
         path: '',
         component: AppLayout,
