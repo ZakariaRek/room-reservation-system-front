@@ -10,6 +10,7 @@ import { AuthService } from './app/services/auth.service';
 
 export const appConfig: ApplicationConfig = {
     providers: [
+
         provideRouter(appRoutes, 
             withInMemoryScrolling({ 
                 anchorScrolling: 'enabled', 
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
             }), 
             withEnabledBlockingInitialNavigation()
         ),
+        
         provideHttpClient(withFetch()),
         {
             provide: HTTP_INTERCEPTORS,

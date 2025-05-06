@@ -1,14 +1,8 @@
+// src/app/models/user.model.ts
 export interface User {
-    id: number;
-    username: string;
-    email: string;
-    fullName?: string;
-    created?: string;
-    lastLogin?: string | null;
-    status?: string;
-    roles: string[];
-    department?: string;
-    position?: string;
-    verified?: boolean;
-    activity?: number;
-  }
+  id: number;
+  username: string;
+  email: string;
+  roles?: string[];
+  password?: string; // Optional, used only for create operations
+}
