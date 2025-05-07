@@ -110,8 +110,15 @@ import { UserService } from '../../../services/user.service';
         </ng-template>
       </p-table>
       
-      <p-dialog [(visible)]="userDialog" [style]="{width: '500px'}" header="User information " [modal]="true" styleClass="p-fluid">
+      <p-dialog [(visible)]="userDialog" [style]="{width: '500px'}" header="User information" [modal]="true" styleClass="p-fluid">
         <ng-template pTemplate="content">
+          <div class="text-center mb-8">
+            <div>
+              <img class="img-responsive" src="assets/img/logo (1).png" width="150" height="auto" />
+            </div>
+            <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">User Information</div>
+            <span class="text-muted-color font-medium">Manage user details</span>
+          </div>
           <div class="field mb-4">
             <label for="username" class="block mb-2 font-medium">Username</label>
             <input type="text" pInputText id="username" [(ngModel)]="user.username" required autofocus class="w-full p-3" />
