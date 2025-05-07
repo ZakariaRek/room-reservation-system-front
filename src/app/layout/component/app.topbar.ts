@@ -17,11 +17,9 @@ import { AuthService } from '../../services/auth.service';
                 <i class="pi pi-bars"></i>
             </button>
             <a class="layout-topbar-logo" routerLink="/">
-            <img class="img-responsive" src="assets/img/logo (1).png">
-                
-            </a>
+<img class="img-responsive" src="assets/img/logo (1).png" width="150" height="auto" 
+    >            </a>
         </div>
-
         <div class="layout-topbar-actions">
             <div class="layout-config-menu">
                 <button type="button" class="layout-topbar-action" (click)="toggleDarkMode()">
@@ -80,6 +78,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AppTopbar {
     items!: MenuItem[];
+    logoPath = 'assets/img/logo (1).png';
 
     constructor(
         public layoutService: LayoutService,
@@ -93,4 +92,6 @@ export class AppTopbar {
     logout() {
         this.authService.logout();
     }
+    // In your component
+
 }
