@@ -7,6 +7,7 @@ import { Notfound } from './app/pages/notfound/notfound';
 import { AuthGuard } from './app/guards/auth.guard';
 import { AdminGuard } from './app/guards/admin.guard';
 import { CalendarComponent } from './app/pages/calendar/calendar.component';
+import { DashboardComponent } from './app/pages/dashboard/dashboard';
 
 export const appRoutes: Routes = [
     {
@@ -20,7 +21,7 @@ export const appRoutes: Routes = [
         component: AppLayout,
         canActivate: [AuthGuard],
         children: [
-            // { path: '', component: Dashboard },
+            { path: '', component: DashboardComponent },
             { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
             { path: 'documentation', component: Documentation },
             { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') },
