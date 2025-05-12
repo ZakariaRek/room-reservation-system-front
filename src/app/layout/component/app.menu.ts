@@ -24,10 +24,14 @@ export class AppMenu {
                 label: 'Home',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
                 { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
-                { 
-                    label: 'Event Calendar', 
-                    icon: 'pi pi-calendar', 
-                    routerLink: ['/calendar'] 
+                    {
+                        label: 'Rooms',
+                        icon: 'pi pi-building', // أو أي أيقونة بغيت
+                        routerLink: ['/rooms']
+                    },{
+                    label: 'Event Calendar',
+                    icon: 'pi pi-calendar',
+                    routerLink: ['/calendar']
                 },
                 {
                     label: 'Administration',
@@ -38,16 +42,18 @@ export class AppMenu {
                 {
                     label: 'Calendar',
                     items: [
-                        { 
-                            label: 'Event Calendar', 
-                            icon: 'pi pi-calendar', 
-                            routerLink: ['/calendar'] 
+                        {
+                            label: 'Event Calendar',
+                            icon: 'pi pi-calendar',
+                            routerLink: ['/calendar']
                         }
                     ]
                 },
             ],
 
             },
+
+
             {
                 label: 'UI Components',
                 items: [
@@ -99,7 +105,7 @@ export class AppMenu {
                             }
                         ]
                     },
-                  
+
                     {
                         label: 'Not Found',
                         icon: 'pi pi-fw pi-exclamation-circle',
@@ -173,6 +179,6 @@ export class AppMenu {
                 ]
             }
         ];
-       
+
     }
 }

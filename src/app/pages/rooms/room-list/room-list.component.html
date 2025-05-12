@@ -1,0 +1,86 @@
+<p-panel styleClass="w-full">
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center justify-content-between w-full">
+            <span class="text-xl font-medium">Liste des salles</span>
+            <div class="ml-auto">
+                <button
+                    pButton
+                    type="button"
+                    icon="pi pi-plus"
+                    label="Ajouter une salle"
+                    class="p-button-success p-button-sm"
+                    [routerLink]="['/rooms/create']">
+                </button>
+            </div>
+        </div>
+    </ng-template>
+
+    <p-table [value]="rooms">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nom</th>
+                <th>Capacité</th>
+                <th>Équipements</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-room>
+            <tr>
+                <td>{{ room.name }}</td>
+                <td>{{ room.capacity }}</td>
+                <td>
+                    <button
+                        pButton
+                        type="button"
+                        label="Voir équipements"
+                        class="p-button-info p-button-sm"
+                        (click)="showEquipments(room.id!)">
+                    </button>
+                </td>
+                <td>
+                    <button
+                        pButton
+                        type="button"
+                        label="Modifier"
+                        class="p-button-success p-button-sm me-2"
+                        [routerLink]="['/rooms/edit', room.id]">
+                    </button>
+                    <button
+                        pButton
+                        type="button"
+                        label="Supprimer"
+                        class="p-button-danger p-button-sm"
+                        (click)="deleteRoom(room.id!)">
+                    </button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-panel>
+
+<!-- 🔽 COLLE ICI LE p-dialog 🔽 -->
+<p-dialog
+    header="Équipements de la salle"
+    [(visible)]="displayEquipmentsDialog"
+    [modal]="true"
+    [style]="{ width: '30vw' }">
+
+    <div style="max-height: 250px; overflow-y: auto">
+        <ul *ngIf="selectedEquipments.length > 0" class="p-0 m-0 list-none">
+            <li *ngFor="let eq of selectedEquipments" class="flex align-items-center mb-2">
+                <i class="pi pi-cog text-primary mr-2"></i>
+                {{ eq.name }}
+            </li>
+        </ul>
+        <p *ngIf="selectedEquipments.length === 0">Aucun équipement trouvé.</p>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <button pButton type="button" label="Fermer" class="p-button-text" (click)="displayEquipmentsDialog = false"></button>
+    </ng-template>
+    <p-confirmDialog></p-confirmDialog>
+    <p-toast></p-toast>
+
+</p-dialog>
+

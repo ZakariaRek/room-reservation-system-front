@@ -1,0 +1,19 @@
+.equipment-box {
+    background-color: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+::ng-deep .equipment-dialog-content {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
