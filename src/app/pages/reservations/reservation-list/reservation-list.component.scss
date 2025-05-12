@@ -1,0 +1,12 @@
+/* SCSS */
+.custom-panel .p-panel-header .p-panel-title {
+    font-size: 1.5rem !important;  // Augmenter la taille du texte
+    font-weight: bold !important;   // Rendre le texte en gras
+    text-align: center !important;  // Centrer le texte
+    display: flex;                 // Utiliser flexbox pour aligner l'icône et le texte
+    align-items: center;           // Centrer verticalement l'icône et le texte
+}
+
+.custom-panel .p-panel-header .pi {
+    margin-right: 10px;  // Ajoute un espace entre l'icône et le titre
+}

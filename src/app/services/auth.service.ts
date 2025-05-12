@@ -29,7 +29,7 @@ export interface MessageResponse {
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User | null>;
   public currentUser: Observable<User | null>;
-  private apiUrl = 'http://localhost:8083/api/auth';
+  private apiUrl = 'http://localhost:8081/api/auth';
 
   constructor(private http: HttpClient, private router: Router) {
     const storedUser = localStorage.getItem('currentUser');
@@ -42,9 +42,9 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/signin`, { 
+    return this.http.post<User>(`${this.apiUrl}/signin`, {
       username: username,
-      password: password 
+      password: password
     })
     .pipe(
       tap(user => {
