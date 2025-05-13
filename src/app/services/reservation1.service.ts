@@ -19,7 +19,7 @@ export interface Reservation {
 })
 export class ReservationService {
     // URL de l'API Spring Boot pour récupérer les réservations
-    private apiUrl = 'http://localhost:8081/api/reservations';
+    private apiUrl = 'http://localhost:8083/api/reservations';
 
     constructor(private http: HttpClient) {}
 

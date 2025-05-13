@@ -45,18 +45,19 @@ export class AppMenu implements OnInit {
                 icon: 'pi pi-fw pi-users',
                 routerLink: ['/admin/users']
             });
+            homeItems.splice(1, 0, {
+                label: 'Réservations',
+                icon: 'pi pi-fw pi-calendar-plus',
+                routerLink: ['/reservations']
+            });
         }
 
         this.model = [
             {
                 label: 'Home',
                 items: [
-                { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
-                    {
-                        label: 'Réservations',
-                        icon: 'pi pi-fw pi-calendar-plus',
-                        routerLink: ['/reservations']
-                    },
+               
+                    
 
                     {
                     label: 'Event Calendar',
