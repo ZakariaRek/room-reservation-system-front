@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReservationService, Reservation } from '../../../services/reservation.service';
+import { ReservationService, Reservation } from '../../../services/reservation1.service';
 
 import { DatePipe, NgForOf } from '@angular/common';
 import { TableModule } from 'primeng/table';

@@ -63,22 +63,8 @@ export class AppMenu implements OnInit {
                     icon: 'pi pi-calendar',
                     routerLink: ['/calendar']
                 },
-                {
-                    label: 'Administration',
-                    items: [
-                        { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users'] }
-                    ]
-                },
-                {
-                    label: 'Calendar',
-                    items: [
-                        {
-                            label: 'Event Calendar',
-                            icon: 'pi pi-calendar',
-                            routerLink: ['/calendar']
-                        }
-                    ]
-                },
+                
+                
             ],
 
             },

@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
-import { ReservationService, Reservation } from '../../../services/reservation.service';
+import { ReservationService, Reservation } from '../../../services/reservation1.service';
 import { Panel } from 'primeng/panel';
 
 @Component({
