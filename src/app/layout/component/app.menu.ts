@@ -50,7 +50,23 @@ export class AppMenu implements OnInit {
         this.model = [
             {
                 label: 'Home',
-                items: homeItems
+                items: [
+                { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
+                    {
+                        label: 'Réservations',
+                        icon: 'pi pi-fw pi-calendar-plus',
+                        routerLink: ['/reservations']
+                    },
+
+                    {
+                    label: 'Event Calendar',
+                    icon: 'pi pi-calendar',
+                    routerLink: ['/calendar']
+                },
+                
+                
+            ],
+
             },
             {
                 label: 'Github',

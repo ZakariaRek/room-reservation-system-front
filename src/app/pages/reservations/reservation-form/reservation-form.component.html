@@ -1,0 +1,43 @@
+<div class="surface-section px-4 py-5 shadow-2 border-round w-full mx-auto">
+    <p-panel  [toggleable]="true" class="custom-panel">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="p-grid p-fluid">
+
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="date">Date</label>
+                    <input id="date" type="date" pInputText formControlName="date" class="p-inputtext-sm p-filled" />
+                </div>
+
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="time">Heure</label>
+                    <input id="time" type="time" pInputText formControlName="time" class="p-inputtext-sm p-filled" />
+                </div>
+
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="status">Statut</label>
+                    <p-dropdown
+                        [options]="statuses"
+                        formControlName="status"
+                        placeholder="Choisissez un statut"
+                        class="p-dropdown-sm p-filled">
+                    </p-dropdown>
+                </div>
+
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="roomId">Salle</label>
+                    <input id="roomId" type="number" pInputText formControlName="roomId" class="p-inputtext-sm p-filled" />
+                </div>
+
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="userId">Utilisateur</label>
+                    <input id="userId" type="number" pInputText formControlName="userId" class="p-inputtext-sm p-filled" />
+                </div>
+
+                <div class="p-field p-col-12">
+                    <button type="submit" pButton label="Enregistrer" [disabled]="form.invalid" class="p-button-rounded p-button-success w-full"></button>
+                </div>
+            </div>
+        </form>
+    </p-panel>
+</div>

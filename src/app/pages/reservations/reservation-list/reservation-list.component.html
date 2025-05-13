@@ -1,0 +1,34 @@
+<div class="surface-section px-4 py-5 shadow-2 border-round w-full mx-auto">
+    <p-panel header="Liste des réservations" [toggleable]="true" class="custom-panel">
+<div style="margin-bottom: 1rem; text-align: right;">
+        <button pButton label="Nouvelle réservation" icon="pi pi-plus" [routerLink]="['/reservations/create']"></button>
+    </div>
+
+    <p-table [value]="reservations">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Room ID</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Statut</th>
+                <th>User ID</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-reservation>
+            <tr>
+                <td>{{ reservation.roomId }}</td>
+                <td>{{ reservation.date | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ reservation.time }}</td>
+                <td>{{ reservation.status }}</td>
+                <td>{{ reservation.userId }}</td>
+                <td>
+                    <button pButton type="button" icon="pi pi-pencil" [routerLink]="['/reservations/edit', reservation.id]"></button>
+                    <button pButton type="button" pButtonLabel="Supprimer" icon="pi pi-trash"
+                            class="p-button-danger" (click)="deleteReservation(reservation.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-panel>
+</div>
