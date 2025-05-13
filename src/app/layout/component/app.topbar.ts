@@ -49,7 +49,7 @@ import { ReservationService } from '../../services/reservation.service';
                 </button>
                 <div class="relative">
                     <button
-                        class="layout-topbar-action layout-topbar-action-highlight"
+                        class="layout-topbar-action hidden layout-topbar-action-highlight"
                         pStyleClass="@next"
                         enterFromClass="hidden"
                         enterActiveClass="animate-scalein"
@@ -136,10 +136,6 @@ import { ReservationService } from '../../services/reservation.service';
                 </p-overlayPanel>
             </div>
 
-            <button class="layout-topbar-menu-button layout-topbar-action" pStyleClass="@next" enterFromClass="hidden" enterActiveClass="animate-scalein" leaveToClass="hidden" leaveActiveClass="animate-fadeout" [hideOnOutsideClick]="true">
-                <i class="pi pi-ellipsis-v"></i>
-            </button>
-
             <div class="layout-topbar-menu hidden lg:block">
                 <div class="layout-topbar-menu-content">
                     <button type="button" class="layout-topbar-action" routerLink="/calendar">
@@ -158,10 +154,7 @@ import { ReservationService } from '../../services/reservation.service';
                         <i class="pi pi-sign-out"></i>
                         <span>Logout</span>
                     </button>
-                    <button *ngIf="authService.isLoggedIn()" type="button" class="layout-topbar-action">
-                        <i class="pi pi-user"></i>
-                        <span>Profile</span>
-                    </button>
+                    
                 </div>
             </div>
         </div>

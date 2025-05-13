@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Room, RoomService } from '../../../services/room.service';
+import { Room, RoomService } from '../../../services/room.service1';
 import { Equipment } from '../../../models/equipment.model';
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';

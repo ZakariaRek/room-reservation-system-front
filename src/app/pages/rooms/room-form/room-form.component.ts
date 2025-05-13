@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Room, RoomService } from '../../../services/room.service';
+import { Room, RoomService } from '../../../services/room.service1';
 import { Equipment } from '../../../models/equipment.model';
 
 import { CommonModule } from '@angular/common';
