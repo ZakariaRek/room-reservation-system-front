@@ -28,7 +28,7 @@ export class AppMenu implements OnInit {
     ngOnInit() {
         // Create base menu items that are visible to all users
         let homeItems = [
-            // { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+            { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
             {
                 label: 'Event Calendar',
                 icon: 'pi pi-calendar',
@@ -54,44 +54,45 @@ export class AppMenu implements OnInit {
 
         this.model = [
             {
-                label: 'Home',
-<<<<<<< HEAD
-                items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-                { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
+                // label: 'Home',
+                // items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+                // { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
+                //     {
+                //         label: 'Rooms',
+                //         icon: 'pi pi-building', // أو أي أيقونة بغيت
+                //         routerLink: ['/rooms']
+                //     },{
+                //     label: 'Event Calendar',
+                //     icon: 'pi pi-calendar',
+                //     routerLink: ['/calendar']
+                // },
+                // {
+                //     label: 'Administration',
+                //     items: [
+                //         { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users'] }
+                //     ]
+                // },
+                // {
+                //     label: 'Calendar',
+                //     items: [
+                //         {
+                //             label: 'Event Calendar',
+                //             icon: 'pi pi-calendar',
+                //             routerLink: ['/calendar']
+                //         }
+                //     ]
+                items: [
+               
                     {
                         label: 'Rooms',
                         icon: 'pi pi-building', // أو أي أيقونة بغيت
                         routerLink: ['/rooms']
-                    },{
-                    label: 'Event Calendar',
-                    icon: 'pi pi-calendar',
-                    routerLink: ['/calendar']
-                },
-                {
-                    label: 'Administration',
-                    items: [
-                        { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users'] }
-                    ]
-                },
-                {
-                    label: 'Calendar',
-                    items: [
-                        {
-                            label: 'Event Calendar',
-                            icon: 'pi pi-calendar',
-                            routerLink: ['/calendar']
-                        }
-                    ]
-=======
-                items: [
-               
-                    
+                    },
 
                     {
                     label: 'Event Calendar',
                     icon: 'pi pi-calendar',
                     routerLink: ['/calendar']
->>>>>>> 78b44b8d02dd6ba0b1672f1eaccf2b6aaf7d9c99
                 },
                 
                 
@@ -103,122 +104,6 @@ export class AppMenu implements OnInit {
             {
                 label: 'Github',
                 items: [
-<<<<<<< HEAD
-                    { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
-                    { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
-                    { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/uikit/button'] },
-                    { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'] },
-                    { label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list'] },
-                    { label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree'] },
-                    { label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel'] },
-                    { label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay'] },
-                    // { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['/uikit/media'] },
-                    { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu'] },
-                    // { label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['/uikit/message'] },
-                    { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['/uikit/file'] },
-                    { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/uikit/timeline'] },
-                    { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] }
-                ]
-            },
-            {
-                label: 'Pages',
-                icon: 'pi pi-fw pi-briefcase',
-                routerLink: ['/pages'],
-                items: [
-                    {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing']
-                    },
-                    {
-                        label: 'Auth',
-                        icon: 'pi pi-fw pi-user',
-                        items: [
-                            {
-                                label: 'Login',
-                                icon: 'pi pi-fw pi-sign-in',
-                                routerLink: ['/auth/login']
-                            },
-                            {
-                                label: 'Error',
-                                icon: 'pi pi-fw pi-times-circle',
-                                routerLink: ['/auth/error']
-                            },
-                            {
-                                label: 'Access Denied',
-                                icon: 'pi pi-fw pi-lock',
-                                routerLink: ['/auth/access']
-                            }
-                        ]
-                    },
-
-                    {
-                        label: 'Not Found',
-                        icon: 'pi pi-fw pi-exclamation-circle',
-                        routerLink: ['/pages/notfound']
-                    },
-                    {
-                        label: 'Empty',
-                        icon: 'pi pi-fw pi-circle-off',
-                        routerLink: ['/pages/empty']
-                    }
-                ]
-            },
-            {
-                label: 'Hierarchy',
-                items: [
-                    {
-                        label: 'Submenu 1',
-                        icon: 'pi pi-fw pi-bookmark',
-                        items: [
-                            {
-                                label: 'Submenu 1.1',
-                                icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
-                                ]
-                            },
-                            {
-                                label: 'Submenu 1.2',
-                                icon: 'pi pi-fw pi-bookmark',
-                                items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
-                            }
-                        ]
-                    },
-                    {
-                        label: 'Submenu 2',
-                        icon: 'pi pi-fw pi-bookmark',
-                        items: [
-                            {
-                                label: 'Submenu 2.1',
-                                icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
-                                ]
-                            },
-                            {
-                                label: 'Submenu 2.2',
-                                icon: 'pi pi-fw pi-bookmark',
-                                items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'Get Started',
-                items: [
-                    {
-                        label: 'Documentation',
-                        icon: 'pi pi-fw pi-book',
-                        routerLink: ['/documentation']
-                    },
-=======
->>>>>>> 78b44b8d02dd6ba0b1672f1eaccf2b6aaf7d9c99
                     {
                         label: 'View Source',
                         icon: 'pi pi-fw pi-github',
@@ -228,9 +113,5 @@ export class AppMenu implements OnInit {
                 ]
             }
         ];
-<<<<<<< HEAD
-
-=======
->>>>>>> 78b44b8d02dd6ba0b1672f1eaccf2b6aaf7d9c99
     }
 }
