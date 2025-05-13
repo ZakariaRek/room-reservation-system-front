@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AppMenuitem } from './app.menuitem';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-menu',
@@ -15,13 +16,46 @@ import { AppMenuitem } from './app.menuitem';
         </ng-container>
     </ul> `
 })
-export class AppMenu {
+export class AppMenu implements OnInit {
     model: MenuItem[] = [];
+    isAdmin: boolean = false;
+
+    constructor(private authService: AuthService) {
+        // Check if user is admin on component creation
+        this.isAdmin = this.authService.isAdmin();
+    }
 
     ngOnInit() {
+        // Create base menu items that are visible to all users
+        let homeItems = [
+            // { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+            {
+                label: 'Event Calendar',
+                icon: 'pi pi-calendar',
+                routerLink: ['/calendar']
+            }
+        ];
+
+        // Add the Users menu item only for admins
+        if (this.isAdmin) {
+            homeItems.splice(1, 0, { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] });
+
+            homeItems.splice(1, 0, {
+                label: 'Users',
+                icon: 'pi pi-fw pi-users',
+                routerLink: ['/admin/users']
+            });
+            homeItems.splice(1, 0, {
+                label: 'Réservations',
+                icon: 'pi pi-fw pi-calendar-plus',
+                routerLink: ['/reservations']
+            });
+        }
+
         this.model = [
             {
                 label: 'Home',
+<<<<<<< HEAD
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
                 { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
                     {
@@ -48,15 +82,28 @@ export class AppMenu {
                             routerLink: ['/calendar']
                         }
                     ]
+=======
+                items: [
+               
+                    
+
+                    {
+                    label: 'Event Calendar',
+                    icon: 'pi pi-calendar',
+                    routerLink: ['/calendar']
+>>>>>>> 78b44b8d02dd6ba0b1672f1eaccf2b6aaf7d9c99
                 },
+                
+                
             ],
 
             },
 
 
             {
-                label: 'UI Components',
+                label: 'Github',
                 items: [
+<<<<<<< HEAD
                     { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
                     { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
                     { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/uikit/button'] },
@@ -170,15 +217,20 @@ export class AppMenu {
                         icon: 'pi pi-fw pi-book',
                         routerLink: ['/documentation']
                     },
+=======
+>>>>>>> 78b44b8d02dd6ba0b1672f1eaccf2b6aaf7d9c99
                     {
                         label: 'View Source',
                         icon: 'pi pi-fw pi-github',
-                        url: 'https://github.com/primefaces/sakai-ng',
+                        url: 'https://github.com/ZakariaRek/room-reservation-system-auth-service',
                         target: '_blank'
                     }
                 ]
             }
         ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78b44b8d02dd6ba0b1672f1eaccf2b6aaf7d9c99
     }
 }

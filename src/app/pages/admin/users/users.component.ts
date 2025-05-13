@@ -110,25 +110,34 @@ import { UserService } from '../../../services/user.service';
         </ng-template>
       </p-table>
       
-      <p-dialog [(visible)]="userDialog" [style]="{width: '450px'}" header="User Details" [modal]="true" styleClass="p-fluid">
+      <p-dialog [(visible)]="userDialog" [style]="{width: '500px'}" header="User information" [modal]="true" styleClass="p-fluid">
         <ng-template pTemplate="content">
-          <div class="field">
-            <label for="username">Username</label>
-            <input type="text" pInputText id="username" [(ngModel)]="user.username" required autofocus />
+          <div class="text-center mb-8">
+            <div>
+              <img class="img-responsive" src="assets/img/logo (1).png" width="150" height="auto" />
+            </div>
+            <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">User Information</div>
+            <span class="text-muted-color font-medium">Manage user details</span>
           </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" pInputText id="email" [(ngModel)]="user.email" required />
+          <div class="field mb-4">
+            <label for="username" class="block mb-2 font-medium">Username</label>
+            <input type="text" pInputText id="username" [(ngModel)]="user.username" required autofocus class="w-full p-3" />
           </div>
-          <div class="field" *ngIf="!user.id">
-            <label for="password">Password</label>
-            <input type="password" pInputText id="password" [(ngModel)]="user.password" required />
+          <div class="field mb-4">
+            <label for="email" class="block mb-2 font-medium">Email</label>
+            <input type="email" pInputText id="email" [(ngModel)]="user.email" required class="w-full p-3" />
+          </div>
+          <div class="field mb-4" *ngIf="!user.id">
+            <label for="password" class="block mb-2 font-medium">Password</label>
+            <input type="password" pInputText id="password" [(ngModel)]="user.password" required class="w-full p-3" />
           </div>
         </ng-template>
         
         <ng-template pTemplate="footer">
-          <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-          <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveUser()"></button>
+          <div class="flex justify-end gap-2">
+            <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+            <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveUser()"></button>
+          </div>
         </ng-template>
       </p-dialog>
     </div>

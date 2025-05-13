@@ -1,45 +1,60 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Equipment } from '../models/equipment.model';
+
+import { AuthService } from './auth.service';
 
 export interface Room {
-    id?: number;
-    name: string;
-    capacity: number;
-    type?: string;
-    createdByUserId?: string;
-    equipments?: Equipment[]; // 🔧 Ajoute ce champ ici
+  id: number;
+  name: string;
+  capacity: number;
+  type: string;
+  userId: number;
+  equipments?: Equipment[];
+}
+
+export interface Equipment {
+  id: number;
+  name: string;
 }
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class RoomService {
-    private apiUrl = 'http://localhost:9090/api/rooms';
+  private apiUrl = 'http://localhost:8083/api/rooms';
+  
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) {}
 
-    constructor(private http: HttpClient) {}
+  private getAuthHeaders() {
+    const token = this.authService.getToken();
+    return {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    };
+  }
 
-    getAll(): Observable<Room[]> {
-        return this.http.get<Room[]>(this.apiUrl);
-    }
+  getRooms(): Observable<Room[]> {
+    return this.http.get<Room[]>(this.apiUrl, this.getAuthHeaders());
+  }
 
-    getById(id: number): Observable<Room> {
-        return this.http.get<Room>(`${this.apiUrl}/${id}`);
-    }
+  getRoomById(id: number): Observable<Room> {
+    return this.http.get<Room>(`${this.apiUrl}/${id}`, this.getAuthHeaders());
+  }
 
-    create(room: Room): Observable<Room> {
-        return this.http.post<Room>(this.apiUrl, room);
-    }
+  createRoom(room: Room): Observable<Room> {
+    return this.http.post<Room>(this.apiUrl, room, this.getAuthHeaders());
+  }
 
-    update(id: number, room: Room): Observable<Room> {
-        return this.http.put<Room>(`${this.apiUrl}/${id}`, room);
-    }
+  updateRoom(id: number, room: Room): Observable<Room> {
+    return this.http.put<Room>(`${this.apiUrl}/${id}`, room, this.getAuthHeaders());
+  }
 
-    delete(id: number): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);
-    }
-    getEquipmentsByRoom(roomId: number): Observable<Equipment[]> {
-        return this.http.get<Equipment[]>(`${this.apiUrl}/${roomId}/equipments`);
-    }
+  deleteRoom(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`, this.getAuthHeaders());
+  }
 }
