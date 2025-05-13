@@ -1,0 +1,49 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid p-grid p-formgrid">
+
+    <!-- 🏷️ Nom de la salle -->
+    <div class="p-field p-col-12 p-md-6">
+        <label for="name">🏷️ Nom de la salle</label>
+        <input id="name" type="text" pInputText formControlName="name" placeholder="ex: Salle Conférence A">
+    </div>
+
+    <!-- 👥 Capacité -->
+    <div class="p-field p-col-12 p-md-6">
+        <label for="capacity">👥 Capacité</label>
+        <input id="capacity" type="number" pInputText formControlName="capacity" min="1">
+    </div>
+
+    <!-- 🏷️ Type de salle -->
+    <div class="p-field p-col-12 p-md-6">
+        <label for="type">🏢 Type de salle</label>
+        <p-dropdown
+            id="type"
+            [options]="roomTypes"
+            optionLabel="label"
+            optionValue="value"
+            formControlName="type"
+            placeholder="Sélectionnez un type">
+        </p-dropdown>
+    </div>
+
+    <!-- 🛠️ Liste des équipements -->
+    <div class="p-field p-col-12">
+        <label>🛠️ Équipements</label>
+        <div formArrayName="equipments">
+            <div
+                *ngFor="let eq of equipments.controls; let i = index"
+                [formGroupName]="i"
+                class="p-inputgroup mb-2">
+                <input type="text" pInputText formControlName="name" placeholder="ex: Projecteur">
+                <button type="button" pButton icon="pi pi-trash" class="p-button-danger" (click)="removeEquipment(i)"></button>
+            </div>
+        </div>
+        <button type="button" pButton icon="pi pi-plus" label="Ajouter équipement" class="p-button-sm p-button-success mt-1" (click)="addEquipment()"></button>
+    </div>
+
+    <!-- 🧾 Actions -->
+    <div class="form-actions">
+        <button type="submit" pButton label="✅ Enregistrer" class="p-button-primary" [disabled]="form.invalid"></button>
+        <button type="button" pButton label="❌ Annuler" class="p-button-secondary" (click)="router.navigate(['/rooms'])"></button>
+    </div>
+
+</form>

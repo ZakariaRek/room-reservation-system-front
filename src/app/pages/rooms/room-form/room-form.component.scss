@@ -1,0 +1,48 @@
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+form {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    .p-field {
+        margin-bottom: 1.5rem;
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input,
+        .p-dropdown,
+        .p-inputgroup {
+            width: 100%;
+        }
+    }
+
+    .p-button {
+        min-width: 130px;
+    }
+
+    .p-inputgroup {
+        align-items: center;
+    }
+
+    .p-button-danger {
+        margin-left: 0.5rem;
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+}
