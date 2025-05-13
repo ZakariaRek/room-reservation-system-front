@@ -7,7 +7,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8081/api/user'; // Changed from 'api/users' to match backend endpoint
+  private apiUrl = 'http://localhost:8083/api/user'; // Changed from 'api/users' to match backend endpoint
   private storedUser = localStorage.getItem('currentUser') ;
 private currentUser = this.storedUser ? JSON.parse(this.storedUser) : null;
   private token = this.currentUser?.accessToken;

@@ -27,80 +27,130 @@ export class AppMenu implements OnInit {
 
     ngOnInit() {
         // Create base menu items that are visible to all users
+        // let homeItems = [
+        //     {
+        //         label: 'Event Calendar',
+        //         icon: 'pi pi-calendar',
+        //         routerLink: ['/calendar']
+        //     }
+        // ];
+
+        // // Add the Users menu item only for admins
+        // if (this.isAdmin) {
+        //     homeItems.splice(1, 0, { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] });
+
+        //     homeItems.splice(1, 0, {
+        //         label: 'Users',
+        //         icon: 'pi pi-fw pi-users',
+        //         routerLink: ['/admin/users']
+        //     });
+        //     homeItems.splice(1, 0, {
+        //         label: 'Réservations',
+        //         icon: 'pi pi-fw pi-calendar-plus',
+        //         routerLink: ['/reservations']
+        //     });
+        //     homeItems.splice(1, 0, {
+        //         label: 'Rooms',
+        //         icon: 'pi pi-building', // أو أي أيقونة بغيت
+        //         routerLink: ['/rooms']
+        //     });
+            
+
+        // }
+
+        // this.model = [
+        //     {
+        //         // label: 'Home',
+        //         // items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+        //         // { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
+        //         //     {
+        //         //         label: 'Rooms',
+        //         //         icon: 'pi pi-building', // أو أي أيقونة بغيت
+        //         //         routerLink: ['/rooms']
+        //         //     },{
+        //         //     label: 'Event Calendar',
+        //         //     icon: 'pi pi-calendar',
+        //         //     routerLink: ['/calendar']
+        //         // },
+        //         // {
+        //         //     label: 'Administration',
+        //         //     items: [
+        //         //         { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users'] }
+        //         //     ]
+        //         // },
+        //         // {
+        //         //     label: 'Calendar',
+        //         //     items: [
+        //         //         {
+        //         //             label: 'Event Calendar',
+        //         //             icon: 'pi pi-calendar',
+        //         //             routerLink: ['/calendar']
+        //         //         }
+        //         //     ]
+        //         items: [ 
+        //             {
+        //             label: 'Event Calendar',
+        //             icon: 'pi pi-calendar',
+        //             routerLink: ['/calendar']
+        //         },
+                
+                
+        //     ],
+
+        //     },
+
+
+        //     {
+        //         label: 'Github',
+        //         items: [
+        //             {
+        //                 label: 'View Source',
+        //                 icon: 'pi pi-fw pi-github',
+        //                 url: 'https://github.com/ZakariaRek/room-reservation-system-auth-service',
+        //                 target: '_blank'
+        //             }
+        //         ]
+        //     }
+        // ];
+
         let homeItems = [
-            { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+            
             {
-                label: 'Event Calendar',
+                label: 'Reservation Calendar',
                 icon: 'pi pi-calendar',
                 routerLink: ['/calendar']
             }
+
         ];
 
         // Add the Users menu item only for admins
         if (this.isAdmin) {
-            homeItems.splice(1, 0, { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] });
+            homeItems.splice(0, 0, { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] });
 
-            homeItems.splice(1, 0, {
+            homeItems.splice(4, 0, {
                 label: 'Users',
                 icon: 'pi pi-fw pi-users',
                 routerLink: ['/admin/users']
             });
-            homeItems.splice(1, 0, {
-                label: 'Réservations',
-                icon: 'pi pi-fw pi-calendar-plus',
-                routerLink: ['/reservations']
-            });
-        }
-
-        this.model = [
-            {
-                // label: 'Home',
-                // items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-                // { label: 'Users', icon: 'pi pi-fw pi-home', routerLink: ['/uikit/table'] },
-                //     {
-                //         label: 'Rooms',
-                //         icon: 'pi pi-building', // أو أي أيقونة بغيت
-                //         routerLink: ['/rooms']
-                //     },{
-                //     label: 'Event Calendar',
-                //     icon: 'pi pi-calendar',
-                //     routerLink: ['/calendar']
-                // },
-                // {
-                //     label: 'Administration',
-                //     items: [
-                //         { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users'] }
-                //     ]
-                // },
-                // {
-                //     label: 'Calendar',
-                //     items: [
-                //         {
-                //             label: 'Event Calendar',
-                //             icon: 'pi pi-calendar',
-                //             routerLink: ['/calendar']
-                //         }
-                //     ]
-                items: [
-               
-                    {
+            homeItems.splice(3, 0, {
+                        label: 'Réservations',
+                        icon: 'pi pi-fw pi-calendar-plus',
+                        routerLink: ['/reservations']
+                    });
+            homeItems.splice(2, 0, {
                         label: 'Rooms',
                         icon: 'pi pi-building', // أو أي أيقونة بغيت
                         routerLink: ['/rooms']
-                    },
+                    });
 
-                    {
-                    label: 'Event Calendar',
-                    icon: 'pi pi-calendar',
-                    routerLink: ['/calendar']
-                },
-                
-                
-            ],
+        }
+        
 
+        this.model = [
+            {
+                label: 'Home',
+                items: homeItems
             },
-
-
             {
                 label: 'Github',
                 items: [
