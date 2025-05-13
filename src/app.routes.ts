@@ -7,9 +7,9 @@ import { Notfound } from './app/pages/notfound/notfound';
 import { AuthGuard } from './app/guards/auth.guard';
 import { AdminGuard } from './app/guards/admin.guard';
 import { CalendarComponent } from './app/pages/calendar/calendar.component';
-import { ReservationFormComponent } from './app/pages/reservations/reservation-form/reservation-form.component';
+import { DashboardComponent } from './app/pages/dashboard/dashboard';
 import { ReservationListComponent } from './app/pages/reservations/reservation-list/reservation-list.component';
-
+import { ReservationFormComponent } from './app/pages/reservations/reservation-form/reservation-form.component';
 
 export const appRoutes: Routes = [
     {
