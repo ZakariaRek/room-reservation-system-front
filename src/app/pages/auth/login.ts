@@ -133,9 +133,14 @@ export class Login implements OnInit {
                         detail: 'Login successful!'
                     });
 
-                    // Navigate to return url
+                    // Check if user has ROLE_USER role and redirect to calendar
                     setTimeout(() => {
-                        this.router.navigate([this.returnUrl]);
+                        if (this.authService.hasRole('ROLE_USER') && !this.authService.hasRole('ROLE_ADMIN')) {
+                            this.router.navigate(['/calendar']);
+                        } else {
+                            // Navigate to return url or default route
+                            this.router.navigate([this.returnUrl]);
+                        }
                     }, 1000);
                 },
                 error: (error) => {
